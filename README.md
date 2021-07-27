@@ -8,7 +8,7 @@
 ### Master and Slave config files are stored in the Master_Config and Slave_Config. (Link at the bottom of the document)
 
 
-## 1) Creating a OpenLDAP server to store employee information
+## 1) Creating an OpenLDAP server to store employee information
 
 ### 1.1) Installing OpenLDAP Server
 
@@ -40,7 +40,7 @@ sudo systemctl restart slapd.service
 sudo ldapadd -D "cn=admin,dc=ltacademy,dc=com" -h 127.0.0.1  -W -x -f suffix.ldif
 ```
 
-### 1.5) Now we have added the suffix. So lets create an Organizational under this suffix so we can add the Employee information to it. To do so use the file "OU_Employee.ldif" provided in the "LDIF_Files" folder
+### 1.5) Now we have added the suffix. So lets create an Organizational Unit under this suffix so we can add the Employee information to it. To do so use the file "OU_Employee.ldif" provided in the "LDIF_Files" folder
 
 ```
 sudo ldapadd -D "cn=admin,dc=ltacademy,dc=com" -h 127.0.0.1  -W -x -f OU_Employee.ldif
@@ -70,13 +70,13 @@ sudo ldapadd -D "cn=admin,dc=ltacademy,dc=com" -h 127.0.0.1  -W -x -f Books.ldif
 
 ## c) Making employee email and mobile attributes unique across LDAP tree structure (Using unique overlay)
 
-### To do so first add the following below ```moduleload syncprov.la``` in the slapd.conf file.
+### To do so first add the following below the line ```moduleload syncprov.la``` in the slapd.conf file.
 
 ```
 moduleload      unique
 ```
 
-### Then add the following below ```suffix "dc=ltacademy,dc=com"``` in the slapd.conf file
+### Then add the following below the line ```suffix "dc=ltacademy,dc=com"``` in the slapd.conf file
 
 ```
 overlay unique
@@ -87,13 +87,13 @@ unique_attributes mobile
 
 ## d) Configuring Audit Overlay so that administrator can track what are the changes that happened to the LDAP server
 
-### To do so first add the following below ```moduleload unique``` in the slapd.conf file.
+### To do so first add the following below the line ```moduleload unique``` in the slapd.conf file.
 
 ```
 moduleload      auditlog
 ```
 
-### Then add the following below ```unique_attributes mobile``` in the slapd.conf file
+### Then add the following below the line ```unique_attributes mobile``` in the slapd.conf file
 
 ```
 overlay auditlog
@@ -124,9 +124,9 @@ access to dn.subtree="dc=ltacademy,dc=com"
 	by * none
  ```
  
- ## g) Setting a slave LDAP server ,so that it will replicate LDAP data from master in near real time
+ ## g) Setting a slave LDAP server ,so that it will replicate the Master LDAP Server in near real time
  
- ### Before creating the slave server first add the following below  ```auditlog /var/tmp/OPENLDAPlog.ldif``` in the slapd.conf file in the MASTER server
+ ### Before creating the slave server first add the following below the line ```auditlog /var/tmp/OPENLDAPlog.ldif``` in the slapd.conf file in the MASTER server
  
  ```
 overlay syncprov
@@ -138,7 +138,7 @@ syncprov-sessionlog 100
 
 ### Now we have configured and installed openLDAP in our slave server. Now we are going to add the following configurations to the slapd.conf file in our slave server to retrive data from our Master server in near realtime.
 
-###### Add the following below ```suffix "dc=ltacademy,dc=com"```
+###### Add the following below the line ```suffix "dc=ltacademy,dc=com"```
 
 ```
 syncrepl rid=123
@@ -155,7 +155,7 @@ syncrepl rid=123
 
 ###### Now restart slapd to reflect the changes ```sudo systemctl restart slapd.service```
 
-###### Now we have configured the slave server completely and now its receivng data from the Master server in near realtime.
+###### Now we have configured the slave server completely and now its receivng data from the Master server in near realtime. To confirm everything is working in order run the following command in the salve server ```ldapsearch -x```
 
 
 ## This whole assignment was written and uploaded to a private github repository. All the files and the whole guide is accessible via the link below :
