@@ -4,6 +4,10 @@
 
 ![LDAP Structure](https://user-images.githubusercontent.com/75664650/127180429-b1e6f111-5aab-4e57-9cb8-27e4402b61a5.png)
 
+### All the LDIF files are stored in the LDIF_Files folder
+### Master and Slave config files are stored in the Master_Config and Slave_Config.
+
+
 ## 1) Creating a OpenLDAP server to store employee information
 
 ### 1.1) Installing OpenLDAP Server
