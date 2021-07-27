@@ -4,8 +4,8 @@
 
 ![LDAP Structure](https://user-images.githubusercontent.com/75664650/127180429-b1e6f111-5aab-4e57-9cb8-27e4402b61a5.png)
 
-### All the LDIF files are stored in the LDIF_Files folder
-### Master and Slave config files are stored in the Master_Config and Slave_Config.
+### All the LDIF files are stored in the LDIF_Files folder (Link at the bottom of the document)
+### Master and Slave config files are stored in the Master_Config and Slave_Config. (Link at the bottom of the document)
 
 
 ## 1) Creating a OpenLDAP server to store employee information
@@ -158,8 +158,8 @@ syncrepl rid=123
 ###### Now we have configured the slave server completely and now its receivng data from the Master server in near realtime.
 
 
-
-
+## This whole assignment was written and uploaded to a private github repository. All the files and the whole guide is accessible via the link below :
+https://gitfront.io/r/eshamaaqib/ab9812f7798bc2445ed3a9cba1741da8716fcc28/WSO2-OpenLDAP-Assignment/
 
 
 
