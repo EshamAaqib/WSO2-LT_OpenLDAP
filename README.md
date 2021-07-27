@@ -34,7 +34,7 @@ sudo systemctl restart slapd.service
 ```
 ###### You can use ```slappasswd -h {SSHA}``` to generate a hashed password for the admin account. Default Admin password is 123 and its in clear text at the bottom of the slapd.conf file
 
-### 1.4) Now as we have completed all the step lets create the suffix "dc=ltacademy,dc=com". To do so use the file "Suffix.ldif" provided in the "LDIF_Files" folder 
+### 1.4) Now as we have completed all the steps lets create the suffix "dc=ltacademy,dc=com". To do so use the file "Suffix.ldif" provided in the "LDIF_Files" folder 
 
 ```
 sudo ldapadd -D "cn=admin,dc=ltacademy,dc=com" -h 127.0.0.1  -W -x -f suffix.ldif
