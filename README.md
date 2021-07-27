@@ -138,14 +138,14 @@ syncprov-sessionlog 100
 
 ```
 syncrepl rid=123
-				        provider=ldap://192.168.88.129:389 # IP of the slave server
+		provider=ldap://192.168.88.129:389 # IP of the slave server
                 type=refreshAndPersist
                 searchbase="dc=ltacademy,dc=com"
                 scope=sub
                 attrs="*"
                 schemachecking=off
                 bindmethod=simple
-				        binddn="cn=replicationuser,ou=System,dc=ltacademy,dc=com"             
+		binddn="cn=replicationuser,ou=System,dc=ltacademy,dc=com"             
                 credentials=123
 ```
 
