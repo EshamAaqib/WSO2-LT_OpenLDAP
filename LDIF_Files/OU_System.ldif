@@ -1,0 +1,13 @@
+dn: ou=system,dc=ltacademy,dc=com
+objectClass: organizationalUnit
+ou: system
+description: System Team
+
+dn: cn=replicationuser,ou=system,dc=ltacademy,dc=com
+objectClass: inetOrgPerson
+objectClass: top
+cn: replicationuser
+sn: replicationuser
+uid: replicationuser
+userPassword: {SSHA}fj0O5EYWSj7qLR7BqHRwMuABQL/OSg/X
+

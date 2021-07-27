@@ -1,0 +1,4 @@
+dn: ou=Employee,dc=ltacademy,dc=com
+objectclass: organizationalunit
+ou: Employee
+description: Employees
