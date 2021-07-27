@@ -122,7 +122,7 @@ access to dn.subtree="dc=ltacademy,dc=com"
  
  ## g) Setting a slave LDAP server ,so that it will replicate LDAP data from master in near real time
  
- ### Before creating the slave server first add the following below  ```auditlog /var/tmp/OPENLDAPlog.ldif``` in the slapd.conf file
+ ### Before creating the slave server first add the following below  ```auditlog /var/tmp/OPENLDAPlog.ldif``` in the slapd.conf file in the MASTER server
  
  ```
 overlay syncprov
